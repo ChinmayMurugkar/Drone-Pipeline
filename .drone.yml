@@ -24,6 +24,6 @@ pipeline:
       - "kubectl config set-context $$CLUSTER-CONTEXT --cluster=\"test-ttc\" --namespace=\"$$NAMESPACE\" --user=\"test-ttc\""
       - "kubectl config use-context $$CLUSTER-CONTEXT"
       - "kubectl get deployments"
-      - "kubectl create -f  kubernetes/ttc/deployment.yml --record"
+      - "kubectl create -f  kubernetes/deployment.yml --record"
     when:
       branch: master
