@@ -27,7 +27,7 @@ This project focuses more on creating a continous integration and continous depl
 * Namespace in Kubernetes namespace, associated authorization token and IP address of the host name or kubernetes cluster 
 
 ### Drone server
-* We are using dorne 5 server - URL : http://drone5.target.com
+* We are using dorne 5 server
 * Login using your github credentials
 
 ### Creating webhooks on drone server
