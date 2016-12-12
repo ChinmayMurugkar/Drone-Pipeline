@@ -122,7 +122,4 @@ This is command to run pipeline with drone docker plugin
 * For docker - 
 edi.docker.target.com
 
-* kubernetes server used -  
-https://apiserver.us-central-1ttc.test.core.k8s.tgt
-
 For POC purposes all the secrets can be replaced with the original values
