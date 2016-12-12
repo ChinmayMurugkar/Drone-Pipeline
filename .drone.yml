@@ -1,0 +1,29 @@
+pipeline:
+  build:
+    commands:
+      - "./gradlew clean build"
+    environment:
+      - GRADLE_USER_HOME=~/.gradle
+    image: "java:openjdk-8"
+  docker:
+    image: plugins/docker
+    registry: <YOUR-DOCKER-REGISTRY>
+    repo: <YOUR-DOCKER-REPO>
+    username: $$USERNAME
+    password: $$PASSWORD
+    email: $$EMAIL
+    tag: testing-hello-drone
+    when:
+      branch: master
+  deployment-ttc:
+    image: chinmaym/kubernetes
+    commands:
+      - "cat "$$kubeConfig" > ~/.kube/config"
+      - "kubectl config set-credentials test-ttc --token $$TOKEN"
+      - "kubectl config set-cluster $$CLUSTER-NAME --server=<server-ip> --insecure-skip-tls-verify"
+      - "kubectl config set-context $$CLUSTER-CONTEXT --cluster=\"test-ttc\" --namespace=\"$$NAMESPACE\" --user=\"test-ttc\""
+      - "kubectl config use-context $$CLUSTER-CONTEXT"
+      - "kubectl get deployments"
+      - "kubectl create -f  kubernetes/ttc/deployment.yml --record"
+    when:
+      branch: master
