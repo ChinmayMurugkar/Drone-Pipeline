@@ -1,7 +1,7 @@
 
 # Drone Pipeline 
 
-This is the effort for Proof of concept the pipeline to build sprinboot applications, build a docker image using the binary 
+This is the effort for POC the pipeline to build sprinboot applications, build a docker image using the binary 
 file build and Dockerfile provided. Push the docker image to artifactory. Finally deploy the pod in turn which has the 
 application container of the application.
 
