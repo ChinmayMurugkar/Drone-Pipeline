@@ -118,8 +118,5 @@ This is command to run pipeline with drone docker plugin
 * chinmaym/kubernetes : provides a container to run kubectl commands
 * plugins/docker : for publishing docker images to repository
 
-### Repository and server used 
-* For docker - 
-edi.docker.target.com
 
 For POC purposes all the secrets can be replaced with the original values
